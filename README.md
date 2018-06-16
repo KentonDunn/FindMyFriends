@@ -1,2 +1,2 @@
-# FindMyFriends
-Full stack app with express.js()
+# FriendFinder
+Express.js skills.  Full stack application utilizing express.js. 

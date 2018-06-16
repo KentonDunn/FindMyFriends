@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FriendFinder</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Survey Questions</h1>
+        <hr>
+        <form>
+            <h3>About you</h3>
+            <div class="form-group">
+                <label for="friendName">Name (Required)</label>
+                <input type="name" class="form-control" id="friendName" placeholder="" required>
+            </div>
+            <div class="form-group">
+                <label for="friendPhoto">Link to photo image (Required)</label>
+                <input type="photo" class="form-control" id="friendPhoto" placeholder="" required>
+            </div>
+        </form>
+
+        <h3>
+            <strong>Question 1</strong>
+        </h3>
+        <h4>The Matrix changed everything in 1999</h4>
+        <select class="form-control" id="q1">
+            <option value></option>
+            <option value=1>1 (Strongly Disagree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Agree)</option>
+        </select>
+        <!--
+        <h3>
+            <strong>Question 2</strong>
+        </h3>
+        <h4>Michael Jordan is the G.O.A.T! (Fight me!)</h4>
+        <select class="form-control" id="q2">
+            <option value></option>
+            <option value=1>1 (Strongly Disagree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Agree)</option>
+        </select>
+        <h3>
+            <strong>Question 3</strong>
+        </h3>
+        <h4>DC over Marvel!</h4>
+        <select class="form-control" id="q3">
+            <option value></option>
+            <option value=1>1 (Strongly Disagree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Agree)</option>
+        </select>
+        <h3>
+            <strong>Question 4</strong>
+        </h3>
+        <h4>The Walking Dead is a great show/comic book</h4>
+        <select class="form-control" id="q4">
+            <option value></option>
+            <option value=1>1 (Strongly Disagree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Agree)</option>
+        </select>
+        <h3>
+            <strong>Question 5</strong>
+        </h3>
+        <h4>I prefer to listen to old school hip-hop from the late 90's.</h4>
+        <select class="form-control" id="q5">
+            <option value></option>
+            <option value=1>1 (Strongly Disagree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Agree)</option>
+        </select>
+        <h3>
+            <strong>Question 6</strong>
+        </h3>
+        <h4>Star Wars over Star Trek!</h4>
+        <select class="form-control" id="q6">
+            <option value></option>
+            <option value=1>1 (Strongly Disagree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Agree)</option>
+        </select>
+        <h3>
+            <strong>Question 7</strong>
+        </h3>
+        <h4>I binge watched Stranger Things on Netflix!</h4>
+        <select class="form-control" id="q7">
+            <option value></option>
+            <option value=1>1 (Strongly Disagree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Agree)</option>
+        </select>
+        <h3>
+            <strong>Question 8</strong>
+        </h3>
+        <h4>Dragonball Z is one of the best anime!</h4>
+        <select class="form-control" id="q8">
+            <option value></option>
+            <option value=1>1 (Strongly Disagree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Agree)</option>
+        </select>
+        <h3>
+            <strong>Question 9</strong>
+        </h3>
+        <h4>I'd rather watch a soccer game over a baseball game.</h4>
+        <select class="form-control" id="q9">
+            <option value></option>
+            <option value=1>1 (Strongly Disagree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Agree)</option>
+        </select>
+        <h3>
+            <strong>Question 10</strong>
+        </h3>
+        <h4>The Burly Brawl is a classic fight scene!</h4>
+        <select class="form-control" id="q10">
+            <option value></option>
+            <option value=1>1 (Strongly Disagree)</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5 (Strongly Agree)</option>
+        </select>
+        -->
+        <br>
+        <button type="submit" class="btn btn-primary submit">Submit</button>
+
+
+
+        <footer class="footer">
+            <div class="container">
+                <p>
+                    <a href="/api/friends">API Friends List</a> |
+                    <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a>
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+
+</body>
+
+<script type="text/javascript">
+    $(".submit").on("click", function (event) {
+        event.preventDefault();
+
+        var newFriend = {
+            name: $("#friendName").val().trim(),
+            photo: $("#friendPhoto"),
+            score: [$(".q1").val()]
+        }
+        console.log(newFriend);
+    });
+</script>
+
+</html>
