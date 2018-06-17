@@ -181,10 +181,20 @@
             scores: [$("#q1").val()]
         };
         console.log(newFriend);
-        $.post("/api/friends", newFriend)
-            .then(function (data) {
-                console.log(data);
-            });
+        $.post("/api/friends", newFriend, function (data) {
+            /*"data" is what is returned from the server
+            in our case it will be a boolean stating true/false*/
+            console.log("The data returned from the api/friend server is either T or F:" + data);
+            if (data) {
+                /*run the math to calculate the absolute value between
+                the answers of each friend vs NewFriends' answers
+                and then whoever has the lowest absolute value is the best
+                match for new friend.*/
+                alert("This is your match")
+            } else {
+                alert("We couldn't find a match.")
+            }
+        });
 
     });
 </script>
