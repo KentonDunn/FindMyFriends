@@ -177,10 +177,15 @@
 
         var newFriend = {
             name: $("#friendName").val().trim(),
-            photo: $("#friendPhoto"),
-            score: [$(".q1").val()]
-        }
+            photo: $("#friendPhoto").val().trim(),
+            scores: [$("#q1").val()]
+        };
         console.log(newFriend);
+        $.post("/api/friends", newFriend)
+            .then(function (data) {
+                console.log(data);
+            });
+
     });
 </script>
 
