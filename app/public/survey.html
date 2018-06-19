@@ -42,7 +42,7 @@
             <option value=4>4</option>
             <option value=5>5 (Strongly Agree)</option>
         </select>
-        <!--
+
         <h3>
             <strong>Question 2</strong>
         </h3>
@@ -55,6 +55,7 @@
             <option value=4>4</option>
             <option value=5>5 (Strongly Agree)</option>
         </select>
+        <!--
         <h3>
             <strong>Question 3</strong>
         </h3>
@@ -178,14 +179,18 @@
         var newFriend = {
             name: $("#friendName").val().trim(),
             photo: $("#friendPhoto").val().trim(),
-            scores: [$("#q1").val()]
+            scores: [parseInt($("#q1").val()),
+                parseInt($("#q2").val()),
+            ]
         };
         console.log(newFriend);
         $.post("/api/friends", newFriend, function (data) {
+            //if (err) throw err;
             /*"data" is what is returned from the server
             in our case it will be a boolean stating true/false*/
-            console.log("The data returned from the api/friend server is either T or F:" + data);
+            //console.log("The data returned from the api/friend server is either T or F:" + data);
             if (data) {
+
                 /*run the math to calculate the absolute value between
                 the answers of each friend vs NewFriends' answers
                 and then whoever has the lowest absolute value is the best

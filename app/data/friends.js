@@ -14,5 +14,4 @@ var friendsArray = [{
         1
     ]
 }];
-
 module.exports = friendsArray;
