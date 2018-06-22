@@ -60,8 +60,3 @@ module.exports = function (app) {
 /*for (i = 0; i < data.length; i++) {
     console.log("For loop answers" + i);
 }*/
-
-if (friendDiff === 0) {
-  alert
-
-}
