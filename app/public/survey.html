@@ -6,9 +6,11 @@
     <title>FriendFinder</title>
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery.js"></script>
+    
 
 </head>
 
@@ -166,47 +168,66 @@
                 </p>
             </div>
         </footer>
+        
+        <div id="results-modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h2 class="modal-title"><strong>Best Match</strong></h2>
+                    </div>
+                    <div class="modal-body">
+                      <h2 id="match-name"></h2>
+                      <img id="match-img" src="" alt="">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(".submit").on("click", function (event) {
+            event.preventDefault();
+
+            var newFriend = {
+                name: $("#friendName").val().trim(),
+                photo: $("#friendPhoto").val().trim(),
+                scores: [parseInt($("#q1").val()), parseInt($("#q2").val()),
+                    parseInt($("#q3").val()), parseInt($("#q4").val()),
+                    parseInt($("#q5").val()), parseInt($("#q6").val()),
+                    parseInt($("#q7").val()), parseInt($("#q8").val()),
+                    parseInt($("#q9").val()), parseInt($("#q10").val())
+
+                ]
+            };
+            console.log(newFriend);
+
+            $.post("/api/friends", newFriend, function (data) {
+                // if (data) {
+                console.log(data);
+
+                $("#match-name").text(data.name);
+                $("#match-img").attr("src", data.photo);
+
+                // Show the modal with the best match
+                $("#results-modal").modal("toggle");
+                // }
+
+                // else {
+                //     alert('Did not find a match');
+                // }
+            });
+        });
+    </script>
 
 </body>
 
-<script type="text/javascript">
-    $(".submit").on("click", function (event) {
-        event.preventDefault();
-
-        var newFriend = {
-            name: $("#friendName").val().trim(),
-            photo: $("#friendPhoto").val().trim(),
-            scores: [parseInt($("#q1").val()), parseInt($("#q2").val()),
-                parseInt($("#q3").val()), parseInt($("#q4").val()),
-                parseInt($("#q5").val()), parseInt($("#q6").val()),
-                parseInt($("#q7").val()), parseInt($("#q8").val()),
-                parseInt($("#q9").val()), parseInt($("#q10").val())
-
-            ]
-        };
-        console.log(newFriend);
-        $.post("/api/friends", newFriend, function (data) {
-            //if (err) throw err;
-            /*"data" is what is returned from the server
-            in our case it will be a boolean stating true/false*/
-            //console.log(newFriend);
-            //console.log("The data returned from the api/friend server is either T or F:" + data);
-            if (data) {
-
-                /*run the math to calculate the absolute value between
-                the answers of each friend vs NewFriends' answers
-                and then whoever has the lowest absolute value is the best
-                match for new friend.*/
-                alert("This is your match")
-            } else {
-                alert("We couldn't find a match.")
-            }
-        });
-
-    });
-</script>
 
 </html>
