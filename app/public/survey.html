@@ -55,7 +55,7 @@
             <option value=4>4</option>
             <option value=5>5 (Strongly Agree)</option>
         </select>
-        <!--
+
         <h3>
             <strong>Question 3</strong>
         </h3>
@@ -179,8 +179,12 @@
         var newFriend = {
             name: $("#friendName").val().trim(),
             photo: $("#friendPhoto").val().trim(),
-            scores: [parseInt($("#q1").val()),
-                parseInt($("#q2").val()),
+            scores: [parseInt($("#q1").val()), parseInt($("#q2").val()),
+                parseInt($("#q3").val()), parseInt($("#q4").val()),
+                parseInt($("#q5").val()), parseInt($("#q6").val()),
+                parseInt($("#q7").val()), parseInt($("#q8").val()),
+                parseInt($("#q9").val()), parseInt($("#q10").val())
+
             ]
         };
         console.log(newFriend);
@@ -188,6 +192,7 @@
             //if (err) throw err;
             /*"data" is what is returned from the server
             in our case it will be a boolean stating true/false*/
+            //console.log(newFriend);
             //console.log("The data returned from the api/friend server is either T or F:" + data);
             if (data) {
 
